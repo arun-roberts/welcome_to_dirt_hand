@@ -4,13 +4,13 @@ import styles from '../styles/Home.module.sass'
 
 const Bio: NextPage = () => {
   return (
-    <div className={styles.who}>
-      <section className={styles.who_item}>
-        <p className={styles.who_item__bio}>
+    <div className='who'>
+      <section className='who-item'>
+        <p className='who-item__bio'>
             Dirt Hand is a collaborative music platform curated by Arun Roberts. Initially, Arun just wanted to get away from the metronome. He took that desire and turned it into an arrangement and performance aesthetic that would become the Dirt Hand EP. Then he encountered the canons of Steve Reich so he drew up several sets of his own such canons and locked them in a studio with 4 of his songs and a 9-piece jazz band. The result was packaged as a record bearing the name “The Thorn Variations” but in truth that name more accurately describes a process than it does a work. As a process “The Thorn Variations” has been successfully performed by various ensemble types and has been described variously as “an inspired and fully textured tentative tightrope for Roberts’ deep growling storytelling” and “one of those golden bullets of ratification for the extraordinary”.
         </p>
       </section>
-      <section className={`${styles.who_item} ${styles.who_friends}`}>
+      <section className='who-item who-friends'>
         <h2>Friends of Dirt Hand:</h2>
         <Link href="http://www.samboon.com.au/"><a>Sam Boon</a></Link> || 
         <Link href="https://www.ballparkmusic.com/"><a> Sam Cromack</a></Link> || 

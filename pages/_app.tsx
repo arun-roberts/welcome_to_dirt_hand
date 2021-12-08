@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <Head>
-        {/* <meta charset="utf-8" /> */}
+        
         <title>Dirt Hand</title>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600&family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet" />

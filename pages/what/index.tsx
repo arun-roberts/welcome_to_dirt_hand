@@ -1,23 +1,22 @@
 import Link from 'next/link'
 import type { NextPage } from 'next'
-import styles from '../../styles/Home.module.sass'
 
 const What: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.container}>
+    <div className='what'>
+      <div className='what'>
         <Link href='/what/read'>
-          <a className={styles.container}>READ</a>
+          <a className='what'>READ</a>
         </Link>
       </div>
-      <div className={styles.container}>
+      <div className='what'>
         <Link href='/what/listen'>
-          <a className={styles.container}>LISTEN</a>
+          <a className='what'>LISTEN</a>
         </Link>
       </div>
-      <div className={styles.container}>
+      <div className='what'>
         <Link href='/what/watch'>
-          <a className={styles.container}>WATCH</a>
+          <a className='what'>WATCH</a>
         </Link>
       </div>
     </div>
