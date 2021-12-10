@@ -30,12 +30,11 @@ const Listen: NextPage = () => {
   }
 
   return (
-    <div className="container what-listen">
-      
+    <>
       {data.what.map((record, i) => (
          <Bandcamp key={'r' + i} handleClick={handleClick} isDisplayed={isDisplayed} record={record} />
       )) }
-    </div>
+    </>
   )
 }
 

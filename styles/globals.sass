@@ -48,45 +48,69 @@ button
     min-height: 100vh
 
 .nav
-    position: relative
-    right: 0
-    left: 0
-    top: 0
+    position: sticky
     display: flex
     align-items: center
     justify-content: center
-    height: 4rem
+    right: 0
+    left: 0
+    top: 0
+    height: 15%
     z-index: 2
+    background-color: white
+
+    &__small
+        position: sticky
+        right: 0
+        left: 0
+        top: 0
+        bottom: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 15%
+        z-index: 2
+        background-color: white
 
     &__heading
-        position: absolute
-        font-size: 1.5rem
-        left: 1rem
+        display: none
 
     &-menu
-        display: inline-flex
-        justify-content: space-between
-        width: 20%
+        position: absolute
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        align-items: center
+        bottom: 0
+        top: 0
+        left: 0
+        right: 0
+        background-color: #fff
+        height: 100vh
+        z-index: 2
+
+        &__closed
+            display: none
 
         &__item
             display: inline-block
             text-transform: uppercase
+            text-align: center
             line-height: 1
 
         &__button
             position: relative
-            font-size: 1.5rem
+            font-size: 4rem
 
             &::after 
                 height: 0.1rem
 
     &-icon
-        position: absolute
-        top: 0.5rem
-        right: 0.5rem
-        width: 8%
-        text-align: right
+        width: 8rem
+        margin: 0 auto
 
+        &__hidden
+            display: none
         // &__img
         //     width: 6rem
     
@@ -94,7 +118,8 @@ button
 .container
     padding: 1rem
     position: absolute
-    display: flex
+    // display: flex
+    // flex-direction: column
     justify-content: center
     align-items: center
     bottom: 0
@@ -140,17 +165,12 @@ button
     padding: 2rem
     font-size: 2rem
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
     height: 100%
 
     &-listen
-
-        &__wall
-            float: left
-            height: 100%
-            width: 100%
-            z-index: 2
 
         &__bandcamp
             margin: 1rem
@@ -165,8 +185,13 @@ button
             font-size: 1.5rem
 
     &-read
-        margin-top: 2rem
-        
+        // padding-top: 55rem
+        // padding: 2rem
+        font-size: 2rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
 
     &-watch
 
@@ -174,8 +199,8 @@ button
             border: none
 
 .read-item
-    width: 28%
-    margin: 0 0.2rem
+    width: 100%
+    margin: 1rem 0.2rem
 
     &__heading
         position: sticky
@@ -189,25 +214,10 @@ button
     scrollbar-width: none
     padding-left: 0.2rem
     padding-right: 0.2rem
+    border: 1px solid black
 
     &::-webkit-scrollbar 
         display: none
-
-    &-top
-        position: sticky
-        top: 0
-        height: 5vh
-        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
-        z-index: 2
-        width: 100%
-    
-    &-bottom
-        position: sticky
-        bottom: 0
-        height: 5vh
-        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1))
-        z-index: 2
-        width: 100%
 
 .song
     margin: 0.5rem 0
@@ -219,6 +229,7 @@ button
         // margin-bottom: 1rem
 
 .when
+    z-index: 1
 
 .welcome 
     position: absolute
@@ -234,6 +245,7 @@ button
 
     &-button
         outline: none
+        width: 70%
         font-size: 5rem
 
 #welcome
@@ -251,3 +263,242 @@ button
     100% 
         width: 800px
         height: 800px
+
+@media screen and (min-width: 900px) 
+    *, *::before, *::after 
+        box-sizing: border-box
+        margin: 0
+        padding: 0
+        line-height: 1.2
+        transition: opacity 0.3s ease-out
+        font-family: 'VT323', monospace
+        font-size: 1.2rem
+
+    a
+        text-decoration: none
+        color: black
+
+    body
+        
+    h1, h2, h3, button
+        text-transform: uppercase
+        line-height: 1
+
+    h1
+        display: inline-block
+
+    li
+        list-style: none
+
+    button
+        background-color: rgba(255, 255, 255, 0)
+        border: none
+        cursor: pointer
+        font-family: inherit
+        position: relative
+
+        &::after 
+            content: ''
+            position: absolute
+            display: block
+            width: 100%
+            background-color: black
+            transform: scaleX(0)
+            transition: all 0.5s ease
+
+        &:hover::after 
+            transform: scaleX(1)
+
+    .site-container
+        position: relative
+        width: 100%
+        min-height: 100vh
+
+    .nav
+        position: relative
+        right: 0
+        left: 0
+        top: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 4rem
+        z-index: 2
+
+        &__heading
+            position: absolute
+            font-size: 1.5rem
+            left: 1rem
+
+        &-menu
+            display: inline-flex
+            flex-direction: row
+            justify-content: space-between
+            width: 20%
+
+            &__item
+                display: inline-block
+                text-transform: uppercase
+                line-height: 1
+
+            &__button
+                position: relative
+                font-size: 1.5rem
+
+                &::after 
+                    height: 0.1rem
+
+        &-icon
+            position: absolute
+            top: 0.5rem
+            right: 0.5rem
+            width: 8%
+            text-align: right
+
+            // &__img
+            //     width: 6rem
+        
+
+    .container
+        padding: 1rem
+        position: absolute
+        display: flex
+        justify-content: center
+        align-items: center
+        bottom: 0
+        top: 0
+        left: 0
+        right: 0
+
+    .who
+        display: flex
+        flex-flow: column
+        justify-content: space-evenly
+        align-items: center
+
+        &-item
+            width: 70%
+            &__bio
+        
+        &-friends
+            margin-top: 2rem
+            // width: 50%
+
+    .choose
+        display: none
+        justify-content: center 
+        align-items: center 
+        margin-top: 0.5rem
+        background-color: rgba(255, 255, 255, 0.7)
+
+        &-menu
+            display: flex
+            flex-direction: row
+            justify-content: space-evenly
+            width: 60%
+            
+            &__item
+
+            &__button   
+                font-size: 5rem
+
+                &::after
+                    height: 0.2rem
+
+    .what
+        padding: 2rem
+        font-size: 2rem
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100%
+
+        &-listen
+
+            &__bandcamp
+                margin: 1rem
+                border: 0 
+                z-index: 1
+                display: flex
+                justify-content: center
+                width: 350px 
+                height: 470px
+            
+            &__button
+                font-size: 1.5rem
+
+        &-read
+            margin-top: 2rem
+            
+
+        &-watch
+
+            &__youtube
+                border: none
+
+    .read-item
+        width: 28%
+        margin: 0 0.2rem
+
+        &__heading
+            position: sticky
+            text-align: center
+            margin-bottom: 0.3rem
+
+    .album
+        overflow: scroll
+        height: 60vh
+        -ms-overflow-style: none  
+        scrollbar-width: none
+        padding-left: 0.2rem
+        padding-right: 0.2rem
+
+        &::-webkit-scrollbar 
+            display: none
+
+        &-top
+            position: sticky
+            top: 0
+            height: 5vh
+            background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
+            z-index: 2
+            width: 100%
+        
+        &-bottom
+            position: sticky
+            bottom: 0
+            height: 5vh
+            background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1))
+            z-index: 2
+            width: 100%
+
+    .song
+        margin: 0.5rem 0
+
+        &__title
+            margin-bottom: 0.5rem
+        
+        &__p
+            // margin-bottom: 1rem
+
+    .when
+
+    .welcome 
+        position: absolute
+        z-index: 2
+        background-color: white
+        display: flex
+        justify-content: center
+        align-items: center
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+
+        &-button
+            outline: none
+            font-size: 5rem
+
+    #welcome
+        font-size: 5rem
+            

@@ -1,19 +1,16 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import { useState } from 'react'
-import Layout from '../components/layout'
 
-const Home: NextPage = ({data}: object) => {
+
+const Home: NextPage = ({ data }: object) => {
   const [ isClicked, setIsClicked ] = useState(false)
-  console.log(data)
 
   return (
     <div style={{opacity: isClicked ? "0" : "1", zIndex: isClicked ? "0" : "2"}} className='welcome'>
-      <button 
-        className='welcome-button'
-        onClick={() => setIsClicked(true)}
-      >
-        Welcome to Dirt Hand.
-      </button>
+      <Link href='/welcome' >
+        <a className='welcome-button' onClick={() => setIsClicked(true)}>Welcome to Dirt Hand.</a>
+      </Link>
     </div>
   )
 }

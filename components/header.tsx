@@ -1,32 +1,37 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import hands from '../public/assets/just_hands_cropped.jpg'
-// import styles from '../styles/Home.module.sass'
+import { useState, useContext } from 'react'
+import AppContext from '../public/assets/context'
 
 const Header = () => {
+    const [ isMenuOpen, setIsMenuOpen ] = useState(true)
+    const value = useContext(AppContext);
+    let { isMobile } = value.state;
+
   return (
     <nav className='nav'>
-        {/* <h1 className='nav__heading}>This is Dirt Hand.</h1> */}
-        <ul className='nav-menu'>
+        <h1 className='nav__heading'>This is Dirt Hand.</h1>
+        <ul className={isMobile && !isMenuOpen ? 'nav-menu__closed' : 'nav-menu'}>
             <li className='nav-menu__item'>
                 <Link href='/who' >
-                    <a className='nav-menu__button'>Who</a>
+                    <a className='nav-menu__button' onClick={() => isMobile && setIsMenuOpen(false)}>Who</a>
                 </Link>
             </li>
             <li className='nav-menu__item'>
                 <Link href='/what' >
-                    <a className='nav-menu__button'>What</a>
+                    <a className='nav-menu__button' onClick={() => isMobile && setIsMenuOpen(false)}>What</a>
                 </Link>
             </li>
             <li className='nav-menu__item'>
                 <Link href='/when'>
-                    <a className='nav-menu__button'>When</a>
+                    <a className='nav-menu__button' onClick={() => isMobile && setIsMenuOpen(false)}>When</a>
                 </Link>
             </li>
         </ul>
-        <figure className='nav-icon'>
-            <a href="https://www.instagram.com/dirthandband/">
-                <Image src={hands} alt="hands" />
+        <figure className={isMobile && isMenuOpen ? 'nav-icon__hidden' : 'nav-icon'}>
+            <a>
+                <Image src={hands} alt="hands" onClick={() => isMobile && setIsMenuOpen(true)}/>
             </a>
         </figure>
     </nav>
@@ -34,3 +39,5 @@ const Header = () => {
 }
 
 export default Header
+
+// href={isMobile ? '' : "https://www.instagram.com/dirthandband/"
