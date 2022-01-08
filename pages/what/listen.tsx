@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Bandcamp from '../../components/bandcamp'
 import data from '../../public/assets/data.js'
+import AppContext from '../../public/assets/context'
+import LazyOne from '../../components/lazyOne'
 
 type Record = {
   title: string;
@@ -16,24 +18,56 @@ type Record = {
     youtubeLinks: never[];
 }
 
-const titles = {}
-data.what.forEach((record: Record) => titles[record.title] = false)
+const titles: {[key: string]: boolean} = {}
+const trueTitles: {[key: string]: boolean} = {}
+data.what.forEach((record) => {
+  titles[record.title] = false;
+  trueTitles[record.title] = true;
+})
 
 const Listen: NextPage = () => {
   const [ isDisplayed, setIsDisplayed ] = useState(titles)
-  console.log(isDisplayed)
+  const [ counter, setCounter ] = useState(0)
+  const [ isLoaded, setIsLoaded ] = useState({...trueTitles})
+  const [ forReload, setForReload ] = useState(null)
+  const value = useContext(AppContext);
+  let { isMobile } = value.state;
 
-  const handleClick = (title: String) => {
-    const change = {...titles}
+  const handleClick = (title: string) => {
+    const load = {...trueTitles}
+    const change: {[key: string]: boolean} = {...titles}
     change[title] = true
     setIsDisplayed(change)
+    if(forReload) {
+      load[forReload] = false
+      setIsLoaded(load)
+    }
+    setTimeout(() => {
+      setIsLoaded(trueTitles)
+      setForReload(title)
+    }, 500);
   }
 
   return (
     <>
-      {data.what.map((record, i) => (
-         <Bandcamp key={'r' + i} handleClick={handleClick} isDisplayed={isDisplayed} record={record} />
-      )) }
+      {
+      isMobile
+      ? <>
+          <Bandcamp record={data.what[counter]}/> 
+          <div className='what-buttons'>
+            {counter > 0 && <button className='what-buttons__prev' onClick={() => setCounter(counter - 1)}>{data.what[counter - 1].title}</button>}
+            {counter < data.what.length - 1 && <button className='what-buttons__next' onClick={() => setCounter(counter + 1)}>{data.what[counter + 1].title}</button>}
+          </div>
+        </>
+      : data.what.map((record, i) => 
+        <div key={'r' + i} className="what-listen__bandcamp">
+          <LazyOne isLoaded={isLoaded[record.title]} record={record} />
+          <div className={isDisplayed[record.title] ? "cover-div__invisible" : "cover-div"}>
+              <button className="what-listen__button" onClick={() => handleClick(record.title)}>{record.title}</button>
+          </div>
+        </div>
+      )
+      } 
     </>
   )
 }

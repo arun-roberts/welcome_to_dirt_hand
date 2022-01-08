@@ -6,17 +6,17 @@ const What: NextPage = () => {
     <>
       <div className='what'>
         <Link href='/what/read'>
-          <a>READ</a>
+          <a className='what__a'>READ</a>
         </Link>
       </div>
       <div className='what'>
         <Link href='/what/listen'>
-          <a>LISTEN</a>
+          <a className='what__a'>LISTEN</a>
         </Link>
       </div>
       <div className='what'>
         <Link href='/what/watch'>
-          <a>WATCH</a>
+          <a className='what__a'>WATCH</a>
         </Link>
       </div>
     </>
