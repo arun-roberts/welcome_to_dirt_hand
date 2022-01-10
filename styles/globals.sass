@@ -12,8 +12,6 @@ a
     color: black
     cursor: pointer
 
-body
-    
 h1, h2, h3, button
     text-transform: uppercase
     line-height: 1
@@ -30,18 +28,6 @@ button
     cursor: pointer
     font-family: inherit
     position: relative
-
-    &::after 
-        content: ''
-        position: absolute
-        display: block
-        width: 100%
-        background-color: black
-        transform: scaleX(0)
-        transition: all 0.5s ease
-
-    &:hover::after 
-        transform: scaleX(1)
 
 .scroll
     overflow: scroll
@@ -67,11 +53,22 @@ button
         z-index: 2
         width: 100%
 
-
 .site-container
     position: relative
     width: 100%
     min-height: 100vh
+
+.container
+    padding: 1rem
+    position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    bottom: 0
+    top: 0
+    left: 0
+    right: 0
 
 .nav
     position: sticky
@@ -124,17 +121,31 @@ button
         &__hidden
             display: none
 
-.container
-    padding: 1rem
+.welcome 
     position: absolute
+    z-index: 4
+    background-color: white
     display: flex
-    flex-direction: column
     justify-content: center
     align-items: center
-    bottom: 0
     top: 0
+    bottom: 0
     left: 0
     right: 0
+
+    &__button
+        text-align: center
+        outline: none
+        text-transform: uppercase
+        font-size: 5rem
+    
+    &--visible
+        opacity: 1
+        z-index: 2
+
+    &--hidden
+        opacity: 0
+        z-index: 0
 
 .who
     position: absolute
@@ -160,31 +171,8 @@ button
 
     &__a
         font-size: 4rem
-
-    &-listen
-
-        &__bandcamp
-            margin: 1rem
-            border: 0 
-            z-index: 1
-            display: flex
-            justify-content: center
-            width: 350px 
-            height: 470px
-        
-        &__button
-            font-size: 1.5rem
-
-    &-read
-        // padding-top: 55rem
-        // padding: 2rem
-        font-size: 2rem
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-
-    &-buttons
+    
+    &__buttons
         width: 100%
         position: absolute
         bottom: 0
@@ -192,15 +180,34 @@ button
         right: 0
         padding: 2rem
 
-        &__prev
+        &--prev
             display: inline-block
             width: 50%  
             float: left
     
-        &__next
+        &--next
             display: inline-block
             width: 50%
             float: right
+
+    &-listen__bandcamp
+        margin: 1rem
+        border: 0 
+        z-index: 1
+        display: flex
+        justify-content: center
+        width: 350px 
+        height: 470px
+    
+    &-listen__button
+        font-size: 1.5rem
+
+    &-read
+        font-size: 2rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
 
     &-watch
         width: 100%
@@ -219,132 +226,38 @@ button
         text-align: center
         margin-bottom: 0.3rem
 
-.album
-    overflow: scroll
-    height: 60vh
-    -ms-overflow-style: none  
-    scrollbar-width: none
-    padding-left: 0.2rem
-    padding-right: 0.2rem
-    // padding-top: 2rem
-    // border: 1px solid black
+    &__album
+        height: 60vh
+        padding-left: 0.2rem
+        padding-right: 0.2rem
 
-    &::-webkit-scrollbar 
-        display: none
+    &__song
+        margin: 0.5rem 0
 
-    &-top
-        position: sticky
-        top: 0
-        height: 5vh
-        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
-        z-index: 2
-        width: 100%
-
-.song
-    margin: 0.5rem 0
-
-    &__title
-        margin-bottom: 0.5rem
-    
-    &__p
-        // margin-bottom: 1rem
+        &-title
+            margin-bottom: 0.5rem
 
 .when
     z-index: 1
 
-.welcome 
-    position: absolute
-    z-index: 4
-    background-color: white
-    display: flex
-    justify-content: center
-    align-items: center
-    top: 0
-    bottom: 0
-    left: 0
-    right: 0
-
-    &-button
-        text-align: center
-        outline: none
-        text-transform: uppercase
-        font-size: 5rem
-
-#welcome
-    font-size: 5rem
-
-@keyframes grow 
-    0% 
-        width: 0
-        height: 0
-    
-    90% 
-        width: 850px
-        height: 850px
-    
-    100% 
-        width: 800px
-        height: 800px
-
-@media screen and (min-width: 900px) 
-    *, *::before, *::after 
-        box-sizing: border-box
-        margin: 0
-        padding: 0
-        line-height: 1.2
-        transition: opacity 0.3s ease-out
-        font-family: 'VT323', monospace
-        font-size: 1.2rem
-
-    a
-        text-decoration: none
-        color: black
-
-    body
-        
-    h1, h2, h3, button
-        text-transform: uppercase
-        line-height: 1
-
-    h1
-        display: inline-block
-
+@media screen and (min-width: 800px) 
     li
         list-style: none
 
     button
-        background-color: rgba(255, 255, 255, 0)
         border: none
         cursor: pointer
         font-family: inherit
         position: relative
 
-        &::after 
-            content: ''
-            position: absolute
-            display: block
-            width: 100%
-            background-color: black
-            transform: scaleX(0)
-            transition: all 0.5s ease
+    .scroll-top, .scroll-bottom
+        display: none
 
-        &:hover::after 
-            transform: scaleX(1)
-
-    .site-container
-        position: relative
-        width: 100%
-        min-height: 100vh
+    .container
+        flex-direction: row
 
     .nav
-        position: sticky
-        right: 0
-        left: 0
-        top: 0
-        display: flex
         flex-direction: row
-        align-items: center
-        justify-content: center
         height: 4rem
         z-index: 2
 
@@ -362,11 +275,6 @@ button
             width: 20%
             height: 100%
 
-            &__item
-                display: inline-block
-                text-transform: uppercase
-                line-height: 1
-
             &__button
                 position: relative
                 font-size: 1.5rem
@@ -376,61 +284,40 @@ button
 
         &-icon
             position: absolute
-            top: 0.5rem
+            top: 0
             right: 0.5rem
-            width: 8%
+            width: 5rem
             text-align: right
 
-            // &__img
-            //     width: 6rem
-        
-
-    .container
-        padding: 1rem
+    .welcome 
         position: absolute
+        background-color: white
         display: flex
-        flex-direction: row
         justify-content: center
         align-items: center
-        bottom: 0
         top: 0
+        bottom: 0
         left: 0
         right: 0
 
+        &__button
+            outline: none
+            font-size: 5rem
+        
     .who
         display: flex
         flex-flow: column
         justify-content: space-evenly
         align-items: center
+        height: 100%
+        top: 4em
 
         &-item
             width: 70%
-            &__bio
         
         &-friends
             margin-top: 2rem
-            // width: 50%
 
-    .choose
-        display: none
-        justify-content: center 
-        align-items: center 
-        margin-top: 0.5rem
-        background-color: rgba(255, 255, 255, 0.7)
-
-        &-menu
-            display: flex
-            flex-direction: row
-            justify-content: space-evenly
-            width: 60%
-            
-            &__item
-
-            &__button   
-                font-size: 5rem
-
-                &::after
-                    height: 0.2rem
     .cover-div
         position: absolute
         background-color: white
@@ -442,40 +329,38 @@ button
         justify-content: center
         align-items: center
 
-        &__invisible
+        &--invisible
             display: none
 
     .what
         padding: 2rem
         font-size: 2rem
         display: flex
+        flex-direction: row
         justify-content: center
         align-items: center
         height: 100%
 
-        &-listen
-
-
-            &__bandcamp
-                position: relative
-                margin: 1rem
-                border: 0 
-                z-index: 1
-                display: flex
-                justify-content: center
-                width: 350px 
-                height: 470px
-            
-            &__button
-                font-size: 1.5rem
+        &-listen__bandcamp
+            position: relative
+            margin: 1rem
+            border: 0 
+            z-index: 1
+            display: flex
+            justify-content: center
+            width: 350px 
+            height: 470px
+        
+        &-listen__button
+            font-size: 1.5rem
 
         &-read
             margin-top: 2rem
             
 
         &-watch
-            height: 390
-            width: 640
+            height: 390px
+            width: 640px
 
             &__youtube
                 border: none
@@ -484,70 +369,8 @@ button
         width: 28%
         margin: 0 0.2rem
 
-        &__heading
-            position: sticky
-            text-align: center
-            margin-bottom: 0.3rem
-
-    .album
-        overflow: scroll
-        height: 60vh
-        -ms-overflow-style: none  
-        scrollbar-width: none
-        padding-left: 0.2rem
-        padding-right: 0.2rem
-
-        &::-webkit-scrollbar 
-            display: none
-
-        &-top
-            position: sticky
-            top: 0
-            height: 5vh
-            background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
-            z-index: 2
-            width: 100%
-        
-        &-bottom
-            position: sticky
-            bottom: 0
-            height: 5vh
-            background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1))
-            z-index: 2
-            width: 100%
-
-    .song
-        margin: 0.5rem 0
-
-        &__title
-            margin-bottom: 0.5rem
-        
-        &__p
-            // margin-bottom: 1rem
-
     .when
 
-    .welcome 
-        position: absolute
-        z-index: 2
-        background-color: white
-        display: flex
-        justify-content: center
-        align-items: center
-        transition: 1s ease-out
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-
-        &-button
-            outline: none
-            font-size: 5rem
-        
-        &--hidden
-            opacity: 0
-            z-index: 0
-
-    #welcome
-        font-size: 5rem
-            
+@media screen and (min-width: 1000px)
+    .who    
+        height: 85%

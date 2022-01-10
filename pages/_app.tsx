@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [ isMenuOpen, setIsMenuOpen ] = useState(false)
     useEffect(() => {
         
-        setIsMobile(window.matchMedia(`(max-width: 500px)`).matches ) 
+        setIsMobile(window.matchMedia(`(max-width: 800px)`).matches ) 
         
     },[])
   return (

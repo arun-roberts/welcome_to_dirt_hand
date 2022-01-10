@@ -5,17 +5,17 @@ const What: NextPage = () => {
   return (
     <>
       <div className='what'>
-        <Link href='/what/read'>
+        <Link href='/read'>
           <a className='what__a'>READ</a>
         </Link>
       </div>
       <div className='what'>
-        <Link href='/what/listen'>
+        <Link href='/listen'>
           <a className='what__a'>LISTEN</a>
         </Link>
       </div>
       <div className='what'>
-        <Link href='/what/watch'>
+        <Link href='/watch'>
           <a className='what__a'>WATCH</a>
         </Link>
       </div>
