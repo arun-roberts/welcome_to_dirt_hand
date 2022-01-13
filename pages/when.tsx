@@ -1,17 +1,21 @@
 import Link from 'next/link'
 import type { NextPage } from 'next'
 import clientPromise from '../lib/mongodb'
-import Gigs from '../components/gigs'
+import Meta from '../components/Meta'
+import Gigs from '../components/Gigs'
 
 const When: NextPage = ({ when }) => {
   return (
-    <ul className='when'>
-      { 
-        when.length > 0
-        ? when.map(gig => <li className='when-item'><Gigs gig={gig} /></li>)
-        : <li className='when-item--no'>"No gigs just now."</li>
-      }
-    </ul>
+    <>
+      <Meta title="When is Dirt Hand performing?" />
+      <ul className='when'>
+        { 
+          when.length > 0
+          ? when.map(gig => <li className='when-item'><Gigs gig={gig} /></li>)
+          : <li className='when-item--no'>"No gigs just now."</li>
+        }
+      </ul>
+    </>
   )
 }
 

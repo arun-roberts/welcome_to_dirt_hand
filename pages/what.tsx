@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import type { NextPage } from 'next'
+import Meta from '../components/Meta'
 
 const What: NextPage = () => {
   return (
     <>
+      <Meta title="What is Dirt Hand?" />
       <div className='what'>
         <Link href='/read'>
           <a className='what__a'>READ</a>

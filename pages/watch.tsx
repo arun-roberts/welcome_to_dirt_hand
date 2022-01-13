@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Script from 'next/script'
+import Meta from '../components/Meta'
 import YouTube from 'react-youtube'
 
 const Videos: NextPage = ({ data }: object) => {
@@ -17,7 +18,10 @@ const Videos: NextPage = ({ data }: object) => {
     },
   };
   return (
-      <YouTube className='what-watch' videoId='47nseb2d0C0' opts={opts}/>
+      <>
+        <Meta title="Watch Dirt Hand." />
+        <YouTube className='what-watch' videoId='47nseb2d0C0' opts={opts} />
+      </>
   )
 }
 

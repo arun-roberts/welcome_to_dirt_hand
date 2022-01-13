@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Head from 'next/head'
 import AppContext from '../public/assets/context.js'
 import { useState, useEffect } from 'react'
+import Meta from '../components/Meta'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [ isMobile, setIsMobile ] = useState(false)
@@ -24,12 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       }}
     >
       <Layout>
-        <Head>
-          <title>Dirt Hand</title>
-          <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600&family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,500&family=VT323&display=swap" rel="stylesheet" />
-        </Head>
+        <Meta />
         <Component {...pageProps} />
       </Layout>
     </AppContext.Provider>
