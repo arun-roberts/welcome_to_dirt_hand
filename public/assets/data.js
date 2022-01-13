@@ -81,8 +81,7 @@ const data = {
             bandcampEmbed: {
                 src: "https://bandcamp.com/EmbeddedPlayer/album=704923827/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/", 
                 href: "https://dirthand.bandcamp.com/album/the-dirt-hand-ep"
-            },
-            youtubeLinks: []
+            }
         },
         {
             title: 'The Thorn Variations',
@@ -125,8 +124,7 @@ const data = {
             bandcampEmbed: {
                 src: "https://bandcamp.com/EmbeddedPlayer/album=654295986/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/",
                 href: "https://dirthand.bandcamp.com/album/the-thorn-variations"
-            },
-            youtubeLinks: []
+            }
         },
         {
             title: 'Live in Castlemaine',
@@ -144,11 +142,9 @@ const data = {
             bandcampEmbed: {
                 src: "https://bandcamp.com/EmbeddedPlayer/album=2569292405/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/",
                 href: "https://dirthand.bandcamp.com/album/live-in-castlemaine"
-            },
-            youtubeLinks: []
+            }
         }
     ],
-    when: {}
 }
 
 export default data

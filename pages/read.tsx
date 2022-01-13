@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import data from '../public/assets/data.js'
 import AlbumLyrics from '../components/albumLyrics'
+import WhatButtons from '../components/whatButtons'
 import { useContext, useState } from 'react'
 import AppContext from '../public/assets/context'
 
@@ -14,10 +15,7 @@ const Read: NextPage = () => {
             isMobile
             ? <>
                 <AlbumLyrics record={data.what[counter]}/> 
-                <div className='what__buttons'>
-                    {counter > 0 && <button className='what__buttons--prev' onClick={() => setCounter(counter - 1)}>{data.what[counter - 1].title}</button>}
-                    {counter < data.what.length - 1 && <button className='what__buttons--next' onClick={() => setCounter(counter + 1)}>{data.what[counter + 1].title}</button>}
-                </div>
+                <WhatButtons setCounter={setCounter} counter={counter} what={data.what} />
             </>
             : data.what.map((record, i) => (
                <AlbumLyrics key={'r' + i} record={record} />

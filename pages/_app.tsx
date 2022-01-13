@@ -1,11 +1,9 @@
 import '../styles/globals.sass'
-import styles from '../styles/Home.module.sass'
 import type { AppProps } from 'next/app'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import AppContext from '../public/assets/context.js'
 import { useState, useEffect } from 'react'
-
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [ isMobile, setIsMobile ] = useState(false)
@@ -39,3 +37,5 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp
+
+

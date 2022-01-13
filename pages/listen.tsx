@@ -4,6 +4,7 @@ import Bandcamp from '../components/bandcamp'
 import data from '../public/assets/data.js'
 import AppContext from '../public/assets/context'
 import LazyOne from '../components/lazyOne'
+import WhatButtons from '../components/whatButtons'
 
 type Record = {
   title: string;
@@ -15,7 +16,6 @@ type Record = {
     bandcampEmbed: {
         src: string;
     };
-    youtubeLinks: never[];
 }
 
 const titles: {[key: string]: boolean} = {}
@@ -32,7 +32,7 @@ const Listen: NextPage = () => {
   const [ forReload, setForReload ] = useState(null)
   const value = useContext(AppContext);
   let { isMobile } = value.state;
-
+  
   const handleClick = (title: string) => {
     const load = {...trueTitles}
     const change: {[key: string]: boolean} = {...titles}
@@ -54,10 +54,7 @@ const Listen: NextPage = () => {
       isMobile
       ? <>
           <Bandcamp record={data.what[counter]}/> 
-          <div className='what__buttons'>
-            {counter > 0 && <button className='what__buttons--prev' onClick={() => setCounter(counter - 1)}>{data.what[counter - 1].title}</button>}
-            {counter < data.what.length - 1 && <button className='what__buttons--next' onClick={() => setCounter(counter + 1)}>{data.what[counter + 1].title}</button>}
-          </div>
+          <WhatButtons setCounter={setCounter} counter={counter} what={data.what} />
         </>
       : data.what.map((record, i) => 
         <div key={'r' + i} className="what-listen__bandcamp">

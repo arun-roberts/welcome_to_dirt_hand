@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { useState, useContext } from 'react'
 import AppContext from '../public/assets/context'
 
-
-const Home: NextPage = () => {
+const Home: NextPage = ({who}) => {
   const [ isClicked, setIsClicked ] = useState(false);
   const value = useContext(AppContext);
   let { isMenuOpen, isMobile } = value.state;
@@ -30,59 +29,28 @@ const Home: NextPage = () => {
 
 export default Home
 
-
-
-// export const getStaticProps = async () => {
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
-//   const data = await res.json()
-
-//   return {
-//     props: {
-//       data
+// export async function getServerSideProps(context) {
+//   try {
+//     // client.db() will be the default database passed in the MONGODB_URI
+//     // You can change the database by calling the client.db() function and specifying a database like:
+//     // const db = client.db("myDatabase");
+//     // Then you can execute queries against your database like so:
+//     // db.find({}) or any of the MongoDB Node Driver commands
+    
+//     const client = await clientPromise
+//     const db = await client.db("welcomeToDirtHand").collection("pageData").findOne({})
+      
+//     console.log(db)
+//     return {
+//       props: { 
+//         isConnected: true,
+//         // who: db.who
+//       },
+//     }
+//   } catch (e) {
+//     console.error(e)
+//     return {
+//       props: { isConnected: false },
 //     }
 //   }
 // }
-
-// 2. This code loads the IFrame Player API code asynchronously.
-              // var tag = document.createElement('script');
-
-              // tag.src = "https://www.youtube.com/iframe_api";
-              // var firstScriptTag = document.getElementsByTagName('script')[0];
-              // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-              // // 3. This function creates an <iframe> (and YouTube player)
-              // //    after the API code downloads.
-              // var player;
-              // function onYouTubeIframeAPIReady() {
-              //   player = new YT.Player('player', {
-              //     height: '390',
-              //     width: '640',
-              //     videoId: 'M7lc1UVf-VE',
-              //     playerVars: {
-              //       'playsinline': 1
-              //     },
-              //     events: {
-              //       'onReady': onPlayerReady,
-              //       'onStateChange': onPlayerStateChange
-              //     }
-              //   });
-              // }
-
-              // // 4. The API will call this function when the video player is ready.
-              // function onPlayerReady(event) {
-              //   event.target.playVideo();
-              // }
-
-              // // 5. The API calls this function when the player's state changes.
-              // //    The function indicates that when playing a video (state=1),
-              // //    the player should play for six seconds and then stop.
-              // var done = false;
-              // function onPlayerStateChange(event) {
-              //   if (event.data == YT.PlayerState.PLAYING && !done) {
-              //     setTimeout(stopVideo, 6000);
-              //     done = true;
-              //   }
-              // }
-              // function stopVideo() {
-              //   player.stopVideo();
-              // }

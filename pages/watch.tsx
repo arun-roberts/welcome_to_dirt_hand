@@ -4,7 +4,6 @@ import YouTube from 'react-youtube'
 
 const Videos: NextPage = ({ data }: object) => {
   const playlist = data.items.map(e => e.snippet.resourceId.videoId)
-  console.log(data)
   const opts = {
     playerVars: {
       // https://developers.google.com/youtube/player_parameters

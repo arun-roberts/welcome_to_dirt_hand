@@ -2,9 +2,9 @@ import type { Record } from "../pages/what/listen"
 
 const AlbumLyrics = ({ record }: { record: Record }) => {
     return (
-        <section className="read-item scroll">
+        <section className="read-item">
             <h2 className="read-item__heading">{record.title}</h2>
-            <div className="read-item__album">
+            <div className="read-item__album scroll">
                 <div className="scroll-top"></div>{
                 record.lyrics.map((song, i) => (
                     <div key={'s' + i} className="read-item__song">
