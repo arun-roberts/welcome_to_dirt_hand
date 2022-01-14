@@ -145,6 +145,15 @@ const data = {
             }
         }
     ],
+    videos: [
+        '47nseb2d0C0',
+        'jssRPt2GmsY',
+        'ZQLEY5LOzrs',
+        'NGYgxcpxzrc',
+        'dT0V2TfuqcU',
+        'nvjez_soL-8',
+        'rn0qEbAKqQg'
+      ]
 }
 
 export default data

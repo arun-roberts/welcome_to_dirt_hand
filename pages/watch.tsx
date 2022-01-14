@@ -1,14 +1,15 @@
-import type { NextPage, GetStaticProps } from 'next'
+import type { NextPage } from 'next'
 import Meta from '../components/Meta'
 import YouTube from 'react-youtube'
+import data from '../public/assets/data'
 
-const Videos: NextPage = ({ playlist }: any) => {
+const Videos: NextPage = () => {
   const opts: {} = {
       playerVars: {
       playsinline: 0,
       autoplay: 1,
       list: 'PLPRzFKoUr7vMCkA1SpyzBzUjftyrtjmp0',
-      listType: playlist,
+      listType: data.videos,
       modestbranding: 1,
       rel: 0,
       loop: 1,
@@ -24,15 +25,16 @@ const Videos: NextPage = ({ playlist }: any) => {
 
 export default Videos
 
-const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
+// const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLPRzFKoUr7vMCkA1SpyzBzUjftyrtjmp0&key=${process.env.YOUTUBE_API_KEY}`)
-  const data = await res.json();
-  const playlist: string[] = await data.items.map((e: any) => e.snippet.resourceId.videoId)
-  return {
-    props: {
-      playlist
-    }
-  }
-}
+// export const getStaticProps: GetStaticProps = async (context) => {
+//   const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLPRzFKoUr7vMCkA1SpyzBzUjftyrtjmp0&key=${process.env.YOUTUBE_API_KEY}`)
+//   const data = await res.json();
+//   const playlist: string[] = await data.items.map((e: any) => e.snippet.resourceId.videoId)
+//   console.log
+//   return {
+//     props: {
+//       playlist
+//     }
+//   }
+// }
