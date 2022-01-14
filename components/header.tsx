@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import hands from '../public/assets/just_hands_cropped.jpg'
 import { useContext } from 'react'
 import AppContext from '../public/assets/context'
 
@@ -30,9 +29,13 @@ const Header = () => {
             </li>
         </ul>
         <figure className={isMobile && isMenuOpen ? 'nav-icon__hidden' : 'nav-icon'}>
-            <a>
-                <Image src={hands} alt="hands" onClick={() => isMobile && setIsMenuOpen(true)}/>
-            </a>
+            {
+                isMobile
+                ? <Image src='/assets/just_hands_cropped.jpg' width='1275' height='602' alt="hands" onClick={() => setIsMenuOpen(true)}/>
+                : <a href="https://www.instagram.com/dirthandband/" target="_blank" rel="noreferrer noopener">
+                    <Image src='/assets/just_hands_cropped.jpg' width='1275' height='602' alt="hands" onClick={() => isMobile && setIsMenuOpen(true)}/>
+                </a>
+            }
         </figure>
     </nav>
   )
