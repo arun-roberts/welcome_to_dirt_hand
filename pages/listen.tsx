@@ -42,10 +42,10 @@ const Listen: NextPage = () => {
       <Meta title='Listen to Dirt Hand.' /> 
       {
       isMobile
-      ? <>
+      ? <div>
           <Bandcamp record={data.what[counter]}/> 
-          <WhatButtons setCounter={setCounter} counter={counter} what={data.what} />
-        </>
+          <WhatButtons setCounter={setCounter} what={data.what} />
+        </div>
       : data.what.map((record, i) => 
         <div key={'r' + i} className="what-listen__bandcamp">
           <LazyOne isLoaded={isLoaded[record.title]} record={record} />

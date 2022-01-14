@@ -1,11 +1,16 @@
 import type { What } from '../lib/types'
 
-const WhatButtons = ({ setCounter, counter, what }: {setCounter: (count: number) => void, counter: number | any, what: What}) => {
+const WhatButtons = ({ setCounter, what }: {setCounter: (count: number) => void, what: What}) => {
     return (
-        <div className='what__buttons'>
-            {counter > 0 && <button className='what__buttons--prev' onClick={() => setCounter(counter - 1)}>{what[counter - 1].title}</button>}
-            {counter < what.length - 1 && <button className='what__buttons--next' onClick={() => setCounter(counter + 1)}>{what[counter + 1].title}</button>}
-        </div>
+        <ul className='what-buttons'>
+            {
+                what.map((record, i) => (
+                    <li key={'r' + i} className='what-buttons__button'>
+                        <button onClick={() => setCounter(i)}>{record.title}</button>
+                    </li>
+                ))
+            }
+        </ul>
     )
 }
 

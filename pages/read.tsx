@@ -16,10 +16,10 @@ const Read: NextPage = () => {
             <Meta title="Read Dirt Hand." />
             {
                 isMobile
-                ? <>
+                ? <div>
                     <AlbumLyrics record={data.what[counter]}/> 
-                    <WhatButtons setCounter={setCounter} counter={counter} what={data.what} />
-                </>
+                    <WhatButtons setCounter={setCounter} what={data.what} />
+                </div>
                 : data.what.map((record, i) => (
                 <AlbumLyrics key={'r' + i} record={record} />
                 ))
