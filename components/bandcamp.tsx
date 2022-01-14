@@ -1,4 +1,4 @@
-import type { Record } from '../pages/what/listen'
+import type { Record } from '../lib/types'
 
 const Bandcamp = ({record}: {record: Record}) => {
     return (

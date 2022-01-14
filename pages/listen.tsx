@@ -7,19 +7,6 @@ import WhatButtons from '../components/WhatButtons'
 import data from '../public/assets/data.js'
 import AppContext from '../public/assets/context'
 
-
-type Record = {
-  title: string;
-    lyrics: {
-        title: string;
-        text: string[];
-    }[];
-    linerNotes: string;
-    bandcampEmbed: {
-        src: string;
-    };
-}
-
 const titles: {[key: string]: boolean} = {}
 const trueTitles: {[key: string]: boolean} = {}
 data.what.forEach((record) => {
@@ -31,7 +18,7 @@ const Listen: NextPage = () => {
   const [ isDisplayed, setIsDisplayed ] = useState(titles)
   const [ counter, setCounter ] = useState(0)
   const [ isLoaded, setIsLoaded ] = useState({...trueTitles})
-  const [ forReload, setForReload ] = useState(null)
+  const [ forReload, setForReload ] = useState('')
   const value = useContext(AppContext);
   let { isMobile } = value.state;
   
@@ -40,7 +27,7 @@ const Listen: NextPage = () => {
     const change: {[key: string]: boolean} = {...titles}
     change[title] = true
     setIsDisplayed(change)
-    if(forReload) {
+    if(forReload.length > 0) {
       load[forReload] = false
       setIsLoaded(load)
     }
@@ -73,5 +60,3 @@ const Listen: NextPage = () => {
 }
 
 export default Listen
-
-export type { Record }

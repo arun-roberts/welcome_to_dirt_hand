@@ -1,12 +1,12 @@
-import type { NextPage } from 'next'
-import Script from 'next/script'
+import type { NextPage, GetServerSideProps } from 'next'
 import Meta from '../components/Meta'
 import YouTube from 'react-youtube'
+import type { Playlist } from '../lib/types'
 
-const Videos: NextPage = ({ data }: object) => {
-  const playlist = data.items.map(e => e.snippet.resourceId.videoId)
-  const opts = {
-    playerVars: {
+const Videos: NextPage = ({ data }: any) => {
+  const playlist = data.items.map((e: any) => e.snippet.resourceId.videoId)
+  const opts: {} = {
+      playerVars: {
       // https://developers.google.com/youtube/player_parameters
       playsinline: 0,
       autoplay: 1,
@@ -29,9 +29,9 @@ export default Videos
 
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLPRzFKoUr7vMCkA1SpyzBzUjftyrtjmp0&key=${process.env.YOUTUBE_API_KEY}`)
-  const data = await res.json();
+  const data: Playlist = await res.json();
   return {
     props: {
       data

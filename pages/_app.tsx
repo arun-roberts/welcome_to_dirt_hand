@@ -1,7 +1,6 @@
 import '../styles/globals.sass'
 import type { AppProps } from 'next/app'
-import Layout from '../components/layout'
-import Head from 'next/head'
+import Layout from '../components/Layout'
 import AppContext from '../public/assets/context.js'
 import { useState, useEffect } from 'react'
 import Meta from '../components/Meta'

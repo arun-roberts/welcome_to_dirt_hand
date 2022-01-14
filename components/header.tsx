@@ -12,11 +12,7 @@ const Header = () => {
   return (
     <nav className='nav'>
         <h1 className='nav__heading'>This is Dirt Hand:</h1>
-        <ul className={
-            isMobile && !isMenuOpen 
-            ? 'nav-menu__closed' 
-            : 'nav-menu'
-        }>
+        <ul className={isMobile && !isMenuOpen ? 'nav-menu__closed' : 'nav-menu'}>
             <li className='nav-menu__item'>
                 <Link href='/who' >
                     <a className='nav-menu__button' onClick={() => setIsMenuOpen(false)}>Who</a>

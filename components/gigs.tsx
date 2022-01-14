@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import type { Gig } from '../lib/types'
 
-const Gigs = ({ gig }) => {
+const Gigs = ({ gig }: { gig: Gig}) => {
     return (
         <ul className='gig'>
             <li className='gig-item gig-item--date'>{gig.date}</li>

@@ -1,4 +1,4 @@
-import type { Record } from "../pages/what/listen"
+import type { Record } from "../lib/types"
 
 const AlbumLyrics = ({ record }: { record: Record }) => {
     return (
