@@ -28,15 +28,18 @@ export type Gig = {
     date: string; 
     title: string; 
     venue: string; 
-    link?: string; 
-    venueLink?: string
+    gigLink?: string; 
+    venueLink?: string;
+    future: boolean;
 };
+
+export type GigData = Gig[];
 
 export type Thumbnails = {
     url: string;
     width: number;
     height: number;
-  };
+};
 
 export type Playlist = {
     kind: string;

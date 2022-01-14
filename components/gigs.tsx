@@ -2,16 +2,17 @@ import Link from 'next/link'
 import type { Gig } from '../lib/types'
 
 const Gigs = ({ gig }: { gig: Gig}) => {
+    const fadedStyle = gig.future ? '' : 'gig-item--fade'
     return (
         <ul className='gig'>
-            <li className='gig-item gig-item--date'>{gig.date}</li>
-            <li className='gig-item'>{
-                gig.link 
-                ? <Link href={gig.link}><a target="_blank" rel="noreferrer noopener">{gig.title}</a></Link> 
+            <li className={fadedStyle + ' gig-item--date'}>{gig.date}</li>
+            <li className={fadedStyle}>{
+                gig.gigLink && gig.future
+                ? <Link href={gig.gigLink}><a target="_blank" rel="noreferrer noopener">{gig.title}</a></Link> 
                 : gig.title
             }</li>
-            <li className='gig-item'>{
-                gig.venueLink 
+            <li className={fadedStyle}>{
+                gig.venueLink && gig.future
                 ? <Link href={gig.venueLink}><a target="_blank" rel="noreferrer noopener">{gig.venue}</a></Link> 
                 : gig.venue
             }</li>

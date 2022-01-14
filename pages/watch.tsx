@@ -1,10 +1,8 @@
-import type { NextPage, GetServerSideProps } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Meta from '../components/Meta'
 import YouTube from 'react-youtube'
-import type { Playlist } from '../lib/types'
 
-const Videos: NextPage = ({ data }: any) => {
-  const playlist = data.items.map((e: any) => e.snippet.resourceId.videoId)
+const Videos: NextPage = ({ playlist }: any) => {
   const opts: {} = {
       playerVars: {
       playsinline: 0,
@@ -28,12 +26,13 @@ export default Videos
 
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLPRzFKoUr7vMCkA1SpyzBzUjftyrtjmp0&key=${process.env.YOUTUBE_API_KEY}`)
-  const data: Playlist = await res.json();
+  const data = await res.json();
+  const playlist: string[] = await data.items.map((e: any) => e.snippet.resourceId.videoId)
   return {
     props: {
-      data
+      playlist
     }
   }
 }
