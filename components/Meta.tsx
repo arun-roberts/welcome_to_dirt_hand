@@ -17,7 +17,7 @@ const Meta = ({title, keywords, description}: {title: string, keywords: string, 
 
 Meta.defaultProps = {
     title: 'Welcome to Dirt Hand.',
-    keywords: 'Dirt, Hand, Arun, jazz, scum jazz, improv',
+    keywords: 'Dirt, Hand, music, Arun, jazz, scum jazz, improv',
     description: 'A music devoid of purity'
 }
 
