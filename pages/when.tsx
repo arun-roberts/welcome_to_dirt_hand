@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import type { Gig } from '../lib/types'
 import { GetServerSideProps } from 'next'
 import clientPromise from '../lib/mongodb'
-import Meta from '../components/meta'
+import Meta from '../components/Meta'
 import Gigs from '../components/gigs'
 
 type When = {

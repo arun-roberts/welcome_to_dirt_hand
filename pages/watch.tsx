@@ -1,5 +1,5 @@
 import type { NextPage, GetServerSideProps } from 'next'
-import Meta from '../components/meta'
+import Meta from '../components/Meta'
 import YouTube from 'react-youtube'
 import type { Playlist } from '../lib/types'
 
@@ -7,7 +7,6 @@ const Videos: NextPage = ({ data }: any) => {
   const playlist = data.items.map((e: any) => e.snippet.resourceId.videoId)
   const opts: {} = {
       playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       playsinline: 0,
       autoplay: 1,
       list: 'PLPRzFKoUr7vMCkA1SpyzBzUjftyrtjmp0',
