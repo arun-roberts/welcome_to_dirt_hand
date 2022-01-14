@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useContext } from 'react'
 import AppContext from '../public/assets/context'
 
-const Header = () => {
+const Header: () => JSX.Element = () => {
     const value = useContext(AppContext);
     let { isMobile, isMenuOpen } = value.state;
     let { setIsMenuOpen } = value;
