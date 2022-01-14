@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import { useState, useContext } from 'react'
-import Meta from '../components/Meta'
-import Bandcamp from '../components/Bandcamp'
-import LazyOne from '../components/LazyOne'
-import WhatButtons from '../components/WhatButtons'
+import Meta from '../components/meta'
+import Bandcamp from '../components/bandcamp'
+import LazyOne from '../components/lazyOne'
+import WhatButtons from '../components/whatButtons'
 import data from '../public/assets/data.js'
 import AppContext from '../public/assets/context'
 

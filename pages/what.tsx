@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { NextPage } from 'next'
-import Meta from '../components/Meta'
+import Meta from '../components/meta'
 
 const What: NextPage = () => {
   return (

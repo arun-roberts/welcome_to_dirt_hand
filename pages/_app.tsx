@@ -1,9 +1,9 @@
 import '../styles/globals.sass'
 import type { AppProps } from 'next/app'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import AppContext from '../public/assets/context.js'
 import { useState, useEffect } from 'react'
-import Meta from '../components/Meta'
+import Meta from '../components/meta'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [ isMobile, setIsMobile ] = useState(false)

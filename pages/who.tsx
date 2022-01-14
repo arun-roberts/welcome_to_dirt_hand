@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import data from '../public/assets/data'
 import AppContext from '../public/assets/context'
-import Meta from '../components/Meta'
+import Meta from '../components/meta'
 
 const Bio: NextPage = () => {
   const value = useContext(AppContext);

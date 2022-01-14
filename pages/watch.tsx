@@ -1,5 +1,5 @@
 import type { NextPage, GetServerSideProps } from 'next'
-import Meta from '../components/Meta'
+import Meta from '../components/meta'
 import YouTube from 'react-youtube'
 import type { Playlist } from '../lib/types'
 

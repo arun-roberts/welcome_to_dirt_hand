@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import { useContext, useState } from 'react'
 import data from '../public/assets/data.js'
-import Meta from '../components/Meta'
-import AlbumLyrics from '../components/AlbumLyrics'
-import WhatButtons from '../components/WhatButtons'
+import Meta from '../components/meta'
+import AlbumLyrics from '../components/albumLyrics'
+import WhatButtons from '../components/whatButtons'
 import AppContext from '../public/assets/context'
 
 const Read: NextPage = () => {
