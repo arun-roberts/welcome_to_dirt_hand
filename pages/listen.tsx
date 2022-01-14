@@ -42,7 +42,7 @@ const Listen: NextPage = () => {
       <Meta title='Listen to Dirt Hand.' /> 
       {
       isMobile
-      ? <div>
+      ? <div className='what-listen'>
           <Bandcamp record={data.what[counter]}/> 
           <WhatButtons setCounter={setCounter} what={data.what} />
         </div>
