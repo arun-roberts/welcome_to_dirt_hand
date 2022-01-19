@@ -1,7 +1,11 @@
 const data = {
     who: {
-        bio: 'Dirt Hand is a collaborative music platform curated by Arun Roberts. Initially, Arun just wanted to get away from the metronome. He took that desire and turned it into an arrangement and performance aesthetic that would become the Dirt Hand EP. Then he encountered the canons of Steve Reich so he drew up several sets of his own such canons and locked them in a studio with 4 of his songs and a 9-piece jazz band. The result was packaged as a record bearing the name “The Thorn Variations” but in truth that name more accurately describes a process than it does a work. As a process “The Thorn Variations” has been successfully performed by various ensemble types and has been described variously as “an inspired and fully textured tentative tightrope for Roberts’ deep growling storytelling” and “one of those golden bullets of ratification for the extraordinary”.',
+        bio: 'Dirt Hand is a collaborative music platform curated by Arun Roberts. Initially, Arun just wanted to get away from the metronome. He took that desire and turned it into an arrangement and performance aesthetic that would become the Dirt Hand EP. Then he encountered the canons of Steve Reich so he drew up several sets of his own such canons and locked them in a studio with 4 of his songs and a 9-piece jazz band. The result was packaged as a record bearing the name “The Thorn Variations” but in truth that name more accurately describes a process than it does a work. As a process “The Thorn Variations” has been successfully performed by various ensemble types and has been described as “an inspired and fully textured tentative tightrope for Roberts’ deep growling storytelling” and “one of those golden bullets of ratification for the extraordinary”.',
         personnel: [
+            {
+                name: 'ALLOLA',
+                link: 'https://www.facebook.com/allolamusic'
+            },
             {
                 name: 'Sam Boon',
                 link: 'http://www.samboon.com.au/'
@@ -15,8 +19,16 @@ const data = {
                 link: 'https://www.facebook.com/ameladmusicpage/'
             },
             {
+                name: 'Cheryl Durongpisitkul',
+                link: 'https://cheryldurongpisitkul.bandcamp.com/releases'
+            },
+            {
                 name: 'Tristan Hoogland',
                 link: 'http://www.tristanhoogland.com/'
+            },
+            {
+                name: 'Ruby Jones',
+                link: 'https://rubyjones.bandcamp.com/'
             },
             {
                 name: 'Andrew McEwan',
@@ -25,6 +37,10 @@ const data = {
             {
                 name: 'Jake Miller',
                 link: 'https://www.jakemiller.com.au/'
+            },
+            {
+                name: 'Milquebarth',
+                link: 'https://www.facebook.com/milquebarth/'
             },
             {
                 name: 'Zac Moynihan',

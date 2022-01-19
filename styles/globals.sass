@@ -158,6 +158,13 @@ button
 
     &-item
         width: 100%
+
+        &--links
+            display: flex
+            flex-direction: row
+            justify-content: space-evenly
+            margin-top: 2rem
+            width: 100%
     
     &-friends
         margin-top: 2rem
@@ -339,10 +346,14 @@ button
         top: 4em
 
         &-item
-            width: 70%
+            width: 90%
+
+            &--links
+                width: 50%
+                margin-top: 0
         
         &-friends
-            margin-top: 2rem
+            margin-top: 0
 
     .cover-div
         position: absolute
@@ -409,7 +420,15 @@ button
             opacity: 0.4
             text-decoration: line-through
 
+@media screen and (min-width: 900px)
+    .who-item
+        width: 75%
+
+        
 
 @media screen and (min-width: 1000px)
     .who    
         height: 85%
+
+        &-item--links
+            width: 35%

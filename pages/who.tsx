@@ -19,6 +19,19 @@ const Bio: NextPage = () => {
               {data.who.bio}
           </p>
         </section>
+        <section className='who-item--links'>
+          <Link href='mailto:dirthandband@mgmail.com'>
+            <a rel="noreferrer noopener">EMAIL</a>
+          </Link>
+          <span>||</span>
+          <Link href='https://www.instagram.com/dirthandband/'>
+            <a target="_blank" rel="noreferrer noopener">INSTAGRAM</a>
+          </Link>
+          <span>||</span>
+          <Link href='https://www.facebook.com/dirthand'>
+            <a target="_blank" rel="noreferrer noopener">FACEBOOK</a>
+          </Link>
+        </section>
         <section className='who-item who-friends'>
           <h2>Friends of Dirt Hand:</h2>
           {data.who.personnel.map((person, i) => (
