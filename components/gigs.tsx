@@ -5,7 +5,9 @@ const Gigs = ({ gig }: { gig: Gig}) => {
     const fadedStyle = gig.future ? '' : 'gig-item--fade'
     return (
         <ul className='gig'>
-            <li className={fadedStyle + ' gig-item--date'}>{gig.date}</li>
+            <li className={fadedStyle + ' gig-item--date'}>
+                <time dateTime={gig.date}>{gig.dateString}</time>
+            </li>
             <li className={fadedStyle}>{
                 gig.gigLink && gig.future
                 ? <Link href={gig.gigLink}><a target="_blank" rel="noreferrer noopener">{gig.title}</a></Link> 

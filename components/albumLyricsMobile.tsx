@@ -3,8 +3,20 @@ import React, { useState, useEffect } from 'react';
 
 
 
-const AlbumLyrics = ({ record }: { record: Record }) => {
+const AlbumLyricsMobile = ({ record, scrollPosition, setScroll }: { record: Record, scrollPosition: number, setScroll: (num: number) => void }) => {
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const position = window.pageYOffset;
+                setScroll(position);
+                console.log(position)
+            };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+            
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [setScroll]);
     return (
         <section className="read-item">
             <h2 className="read-item__heading">{record.title}</h2>
@@ -28,4 +40,4 @@ const AlbumLyrics = ({ record }: { record: Record }) => {
     )
 }
 
-export default AlbumLyrics
+export default AlbumLyricsMobile

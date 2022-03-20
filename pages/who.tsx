@@ -20,7 +20,7 @@ const Bio: NextPage = () => {
           </p>
         </section>
         <section className='who-item--links'>
-          <Link href='mailto:dirthandband@mgmail.com'>
+          <Link href='mailto:dirthandband@gmail.com'>
             <a rel="noreferrer noopener">EMAIL</a>
           </Link>
           <span>||</span>

@@ -25,7 +25,8 @@ export type What = {
 }[];
 
 export type Gig = {
-    date: string; 
+    dateString: string; 
+    date: string;
     title: string; 
     venue: string; 
     gigLink?: string; 
