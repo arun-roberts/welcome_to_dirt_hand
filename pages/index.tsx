@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import { useState, useContext } from 'react'
 import AppContext from '../public/assets/context'
 
@@ -21,6 +22,15 @@ const Home: NextPage = () => {
           Welcome to Dirt Hand{isMobile ? '' : '.'}
         </a>
       </div>
+      { isClicked &&
+        <figure className='home-image'>
+          <Image 
+            src={ isMobile ? '/assets/dirt-hand-BAB-poster-smaller.jpg' : '/assets/dirt-hand-BAB-poster-desktop.jpg'}
+            layout='fill'
+            objectFit='contain'
+          />
+        </figure>
+      }
 
     </>
   )
