@@ -14,8 +14,8 @@ const gigData: GigData = [
         dateString: '09/06/2022',
         date: '2022-06-09',
         title: 'Having a good time in Brunswick w Wet Weather Play',
-        gigLink: 'https://www.welcometodirthand.com',
-        venue: 'Brunswick Artists Bar, Brunswick, VIC',
+        gigLink: 'https://fb.me/e/2znD3h4sy',
+        venue: 'Brunswick Artists\' Bar, Brunswick, VIC',
         venueLink: 'https://brunswickballroom.com.au/brunswickartistsbar/',
         future: true
     }
