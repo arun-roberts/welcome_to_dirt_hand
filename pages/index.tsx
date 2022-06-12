@@ -10,7 +10,6 @@ const Home: NextPage = () => {
   let { setIsMenuOpen } = value;
 
   return (
-    <>
       <div className={isClicked ? 'welcome welcome--hidden' : 'welcome'}>
         <a 
           className='welcome__button' 
@@ -22,17 +21,6 @@ const Home: NextPage = () => {
           Welcome to Dirt Hand{isMobile ? '' : '.'}
         </a>
       </div>
-      { isClicked &&
-        <figure className='home-image'>
-          <Image 
-            src={ isMobile ? '/assets/dirt-hand-BAB-poster-smaller.jpg' : '/assets/dirt-hand-BAB-poster-desktop.jpg'}
-            layout='fill'
-            objectFit='contain'
-          />
-        </figure>
-      }
-
-    </>
   )
 }
 

@@ -17,6 +17,15 @@ const gigData: GigData = [
         gigLink: 'https://fb.me/e/2znD3h4sy',
         venue: 'Brunswick Artists\' Bar, Brunswick, VIC',
         venueLink: 'https://brunswickballroom.com.au/brunswickartistsbar/',
+        future: false
+    },
+    {
+        dateString: '17/07/2022',
+        date: '2022-07-17',
+        title: 'Secret gig. Soon to be announced. But secret for now.',
+        gigLink: 'https://welcometodirthand.com',
+        venue: 'Somewhere close.',
+        venueLink: 'https://www.facebook.com/shotkickersmelb/',
         future: true
     }
     
