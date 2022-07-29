@@ -33,7 +33,7 @@ const gigData: GigData = [
         date: '2022-07-31',
         title: 'Supporting Milk Buttons w The Florets.',
         gigLink: 'https://fb.me/e/1UjsHmhis',
-        venue: 'Shotkickers.',
+        venue: 'The Old Bar.',
         venueLink: 'https://www.theoldbar.com.au/',
         future: true
     }

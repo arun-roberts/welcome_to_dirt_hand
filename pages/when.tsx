@@ -5,7 +5,7 @@ import gigData from '../public/assets/gigData'
 
 const When: NextPage = () => {
   const futureGigs = gigData.filter(g => g.future)
-  const pastGigs = gigData.filter(g => !g.future)
+  const pastGigs = gigData.filter(g => !g.future).reverse()
   return (
     <>
       <Meta title="When is Dirt Hand performing?" />
