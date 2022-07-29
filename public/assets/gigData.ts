@@ -22,10 +22,19 @@ const gigData: GigData = [
     {
         dateString: '17/07/2022',
         date: '2022-07-17',
-        title: 'Secret gig. Soon to be announced. But secret for now.',
+        title: 'Supporting Skyscraper Stan & the Commission Flats.',
         gigLink: 'https://welcometodirthand.com',
-        venue: 'Somewhere close.',
+        venue: 'Shotkickers.',
         venueLink: 'https://www.facebook.com/shotkickersmelb/',
+        future: false
+    },
+    {
+        dateString: '131/07/2022',
+        date: '2022-07-31',
+        title: 'Supporting Milk Buttons w The Florets.',
+        gigLink: 'https://fb.me/e/1UjsHmhis',
+        venue: 'Shotkickers.',
+        venueLink: 'https://www.theoldbar.com.au/',
         future: true
     }
     
