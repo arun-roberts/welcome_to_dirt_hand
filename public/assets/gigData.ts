@@ -29,12 +29,21 @@ const gigData: GigData = [
         future: false
     },
     {
-        dateString: '131/07/2022',
-        date: '2022-07-31',
-        title: 'Supporting Milk Buttons w The Florets.',
-        gigLink: 'https://fb.me/e/1UjsHmhis',
-        venue: 'The Old Bar.',
-        venueLink: 'https://www.theoldbar.com.au/',
+        dateString: '01/02/2023',
+        date: '2023-02-01',
+        title: 'Supporting Roller One. Em Jensen exhibtion opening downstairs.',
+        gigLink: 'https://www.moshtix.com.au/v2/event/out-back-an-exhibition/148219?ref=RSS_rss_bb_artistsbarhp&skin=brunswickartistsbar',
+        venue: 'Brunswick Ballroom.',
+        venueLink: 'https://brunswickballroom.com.au/',
+        future: true
+    },
+    {
+        dateString: '24/03/2023',
+        date: '2023-03-24',
+        title: 'Full band. Full tilt.',
+        gigLink: 'https://www.instagram.com/dirthandband/',
+        venue: 'Brunswick Artist\'s Bar.',
+        venueLink: 'https://brunswickballroom.com.au/brunswickartistsbar//',
         future: true
     }
     
